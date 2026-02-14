@@ -77,6 +77,7 @@ body {
     justify-content: center;
     gap: 10px;
 
+    text-decoration: none; /* ❌ underline हटाया */
     animation: pulse 1.5s infinite;
 }
 
@@ -86,16 +87,10 @@ body {
     100% { box-shadow: 0 0 5px #00c6ff; }
 }
 
-/* 📲 Telegram icon */
 .icon {
     width: 20px;
     height: 20px;
     fill: white;
-}
-
-.countdown {
-    margin-top: 15px;
-    font-size: 15px;
 }
 
 .footer {
@@ -129,25 +124,23 @@ body {
 <div class="box">✔ Trusted Channel</div>
 <div class="box">✔ Join Before Match Starts</div>
 
-<a href="https://t.me/yourchannel" target="_blank">
+<a href="https://t.me/yourchannel" target="_blank" style="text-decoration:none;">
 <button class="btn">
 
-<!-- LEFT TELEGRAM ICON -->
+<!-- LEFT ICON -->
 <svg class="icon" viewBox="0 0 24 24">
 <path d="M9.993 15.674l-.396 5.57c.567 0 .813-.243 1.108-.534l2.657-2.536 5.506 4.03c1.01.558 1.73.265 2.002-.934l3.63-17.04c.34-1.574-.57-2.19-1.55-1.82L1.43 9.25c-1.5.586-1.48 1.42-.26 1.8l5.62 1.755 13.04-8.23c.614-.39 1.17-.174.71.216"/>
 </svg>
 
 JOIN TELEGRAM CHANNEL
 
-<!-- RIGHT TELEGRAM ICON -->
+<!-- RIGHT ICON -->
 <svg class="icon" viewBox="0 0 24 24">
 <path d="M9.993 15.674l-.396 5.57c.567 0 .813-.243 1.108-.534l2.657-2.536 5.506 4.03c1.01.558 1.73.265 2.002-.934l3.63-17.04c.34-1.574-.57-2.19-1.55-1.82L1.43 9.25c-1.5.586-1.48 1.42-.26 1.8l5.62 1.755 13.04-8.23c.614-.39 1.17-.174.71.216"/>
 </svg>
 
 </button>
 </a>
-
-<div class="countdown">Redirecting in <span id="time">30</span> sec...</div>
 
 </div>
 
@@ -161,18 +154,9 @@ this content is for educational purposes only.
 </div>
 
 <script>
-let time = 30;
-let timer = document.getElementById("time");
-
-let countdown = setInterval(() => {
-    time--;
-    timer.innerText = time;
-
-    if(time <= 0){
-        clearInterval(countdown);
-        window.location.href = "https://example.com";
-    }
-}, 1000);
+setTimeout(() => {
+    window.location.href = "https://example.com";
+}, 30000); // 30 sec hidden redirect
 </script>
 
 </body>
