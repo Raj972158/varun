@@ -59,7 +59,7 @@ body {
     border-left: 3px solid cyan;
 }
 
-/* 🔥 Button with Telegram icons */
+/* 🚀 Button */
 .btn {
     margin-top: 20px;
     padding: 14px;
@@ -72,6 +72,11 @@ body {
     font-weight: bold;
     cursor: pointer;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
     animation: pulse 1.5s infinite;
 }
 
@@ -81,12 +86,18 @@ body {
     100% { box-shadow: 0 0 5px #00c6ff; }
 }
 
+/* 📲 Telegram icon */
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
 .countdown {
     margin-top: 15px;
     font-size: 15px;
 }
 
-/* 🔻 Footer outside card */
 .footer {
     margin-top: 20px;
     font-size: 13px;
@@ -119,14 +130,27 @@ body {
 <div class="box">✔ Join Before Match Starts</div>
 
 <a href="https://t.me/yourchannel" target="_blank">
-<button class="btn">📲 JOIN TELEGRAM CHANNEL 📲</button>
+<button class="btn">
+
+<!-- LEFT TELEGRAM ICON -->
+<svg class="icon" viewBox="0 0 24 24">
+<path d="M9.993 15.674l-.396 5.57c.567 0 .813-.243 1.108-.534l2.657-2.536 5.506 4.03c1.01.558 1.73.265 2.002-.934l3.63-17.04c.34-1.574-.57-2.19-1.55-1.82L1.43 9.25c-1.5.586-1.48 1.42-.26 1.8l5.62 1.755 13.04-8.23c.614-.39 1.17-.174.71.216"/>
+</svg>
+
+JOIN TELEGRAM CHANNEL
+
+<!-- RIGHT TELEGRAM ICON -->
+<svg class="icon" viewBox="0 0 24 24">
+<path d="M9.993 15.674l-.396 5.57c.567 0 .813-.243 1.108-.534l2.657-2.536 5.506 4.03c1.01.558 1.73.265 2.002-.934l3.63-17.04c.34-1.574-.57-2.19-1.55-1.82L1.43 9.25c-1.5.586-1.48 1.42-.26 1.8l5.62 1.755 13.04-8.23c.614-.39 1.17-.174.71.216"/>
+</svg>
+
+</button>
 </a>
 
 <div class="countdown">Redirecting in <span id="time">30</span> sec...</div>
 
 </div>
 
-<!-- ✅ अब ये card के बाहर है -->
 <div class="footer">
 This channel advantage by 
 <a href="https://yourlink.com" target="_blank">Reshop</a>
