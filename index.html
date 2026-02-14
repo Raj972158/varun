@@ -13,25 +13,18 @@ body {
     text-align: center;
     color: white;
 
-    /* 🔥 BACKGROUND IMAGE (यहाँ बदलना) */
+    /* ✅ CLEAN BACKGROUND (NO BLUR) */
     background: url('c.jpg') no-repeat center center/cover;
 }
 
-/* Overlay blur effect */
-.overlay {
-    backdrop-filter: blur(6px);
-    padding: 30px;
-    min-height: 100vh;
-}
-
-/* 🔵 Round Profile Image */
+/* 🔵 Profile Image */
 .profile {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    margin-top: 20px;
-    border: 4px solid white;
-    box-shadow: 0 0 20px cyan, 0 0 40px cyan;
+    margin-top: 30px;
+    border: 3px solid white;
+    box-shadow: 0 0 20px cyan;
 }
 
 /* 🔥 Heading */
@@ -41,32 +34,41 @@ body {
     font-weight: bold;
 }
 
-/* 🔹 Box Style */
+/* 📦 Boxes */
 .box {
     margin: 10px auto;
     padding: 10px;
     width: 80%;
     border-radius: 10px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.4);
     border: 1px solid rgba(255,255,255,0.3);
 }
 
-/* 🚀 Button */
+/* 🚀 Button (LIGHT ANIMATION) */
 .btn {
     margin-top: 20px;
     padding: 12px 20px;
     font-size: 18px;
-    border: none;
     border-radius: 30px;
+    border: none;
     background: #0088cc;
     color: white;
     cursor: pointer;
-    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    overflow: hidden;
+
+    /* Glow animation */
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px #00c3ff;
+    }
+    to {
+        box-shadow: 0 0 20px #00c3ff;
+    }
 }
 
 /* Telegram icon */
@@ -74,21 +76,24 @@ body {
     width: 20px;
 }
 
-/* ✨ Border Animation */
-.btn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 30px;
-    border: 2px solid white;
-    opacity: 0;
-    animation: borderBlink 2s infinite;
+/* 🧾 Footer Text */
+.footer {
+    margin-top: 15px;
+    font-size: 14px;
 }
 
-@keyframes borderBlink {
-    0% {opacity: 0;}
-    50% {opacity: 1;}
-    100% {opacity: 0;}
+/* ⚫ Disclaimer */
+.disclaimer {
+    margin-top: 10px;
+    font-size: 10px;
+    color: black;
+}
+
+/* ⏳ Countdown */
+.countdown {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 </style>
@@ -96,32 +101,57 @@ body {
 
 <body>
 
-<div class="overlay">
+<!-- 🔵 Profile -->
+<img src="p.jpg" class="profile">
 
-    <!-- 🔵 PROFILE IMAGE -->
-    <!-- यहाँ अपनी फोटो डालना -->
-    <img src="p.jpg" class="profile">
+<!-- 🔥 Heading -->
+<div class="heading">🔥 Premium Cricket Tips 🔥</div>
 
-    <!-- 🔥 HEADING -->
-    <div class="heading">🔥 Premium Cricket Tips 🔥</div>
+<!-- 📦 Boxes -->
+<div class="box">✔ Daily Match Prediction</div>
+<div class="box">✔ 100% Free Tips</div>
+<div class="box">✔ Expert Analysis</div>
+<div class="box">✔ Join Fast Before Match</div>
 
-    <!-- 📦 TEXT BOXES -->
-    <div class="box">✔ Daily Match Prediction</div>
-    <div class="box">✔ 100% Free Tips</div>
-    <div class="box">✔ Expert Analysis</div>
-    <div class="box">✔ Join Fast Before Match</div>
+<!-- 🚀 Button -->
+<a href="https://t.me/yourchannel" target="_blank">
+    <button class="btn">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+        Join Telegram Channel
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+    </button>
+</a>
 
-    <!-- 🚀 TELEGRAM BUTTON -->
-    <!-- यहाँ अपना Telegram लिंक डालना -->
-    <a href="https://t.me/yourchannel" target="_blank">
-        <button class="btn">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
-            Join Telegram Channel
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
-        </button>
-    </a>
+<!-- ⏳ Countdown -->
+<div class="countdown">Redirecting in <span id="time">30</span> sec...</div>
 
+<!-- 🔗 Footer -->
+<div class="footer">
+    This channel advantage by 
+    <a href="https://yourlink.com" target="_blank">Reshop</a>
 </div>
+
+<!-- ⚫ Disclaimer -->
+<div class="disclaimer">
+    this content is for educational purposes only. we are not responsible for any profit or loss.
+</div>
+
+<script>
+let time = 30;
+let timer = document.getElementById("time");
+
+let countdown = setInterval(() => {
+    time--;
+    timer.innerText = time;
+
+    if(time <= 0){
+        clearInterval(countdown);
+
+        /* 🔥 REDIRECT LINK */
+        window.location.href = "https://example.com";
+    }
+}, 1000);
+</script>
 
 </body>
 </html>
